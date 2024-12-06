@@ -1,0 +1,11 @@
+<div class="flex flex-col">
+  <h1 class="border border-gray-300 p-1 mb-2 text-center">Articles</h1>
+
+  <ul>
+    <% @articles.each do |article| %>
+      <li>
+        <%= link_to article.title, article %>
+      </li>
+    <% end %>
+  </ul>
+</div>
