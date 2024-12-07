@@ -7,6 +7,10 @@
     <%= form.label :body %><br>
     <%= form.textarea :body %>
   </p>
+  <p>
+    <%= form.label :status %><br>
+    <%= form.select :status, Visible::VALID_STATUSES, selected: 'public' %>
+  </p>
   <div class="border border-slate-300 p-1 w-[150px] text-center hover:bg-slate-300">
     <%= form.submit %>
   </div>

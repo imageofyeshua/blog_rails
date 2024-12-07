@@ -1,9 +1,22 @@
-<p>
-  <strong class="text-blue-900">Commenter:</strong>
-  <%= comment.commenter %>
-</p>
+<% unless comment.archived? %>
+  <p>
+    <strong class="text-blue-900">Commenter:</strong>
+    <%= comment.commenter %>
+  </p>
 
-<p>
-  <strong class="text-purple-900">Comment:</strong>
-  <%= comment.body %>
-</p>
+  <p>
+    <strong class="text-purple-900">Comment:</strong>
+    <%= comment.body %>
+  </p>
+
+  <p>
+    <strong class="text-rose-900">Status:</strong>
+    <%= comment.status %>
+  </p>
+  <div class="border border-red-300 p-1 w-[150px] text-center hover:bg-red-300">
+    <%= link_to "Destroy Comment", [comment.article, comment], data: {
+      turbo_method: :delete,
+      turbo_confirm: "Are you sure?"
+    } %>
+  </div>
+<% end %>
