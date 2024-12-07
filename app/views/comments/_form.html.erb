@@ -1,0 +1,13 @@
+<%= form_with model: [ @article, @article.comments.build ] do |form| %>
+  <p>
+    <%= form.label :commenter %><br>
+    <%= form.text_field :commenter %>
+  </p>
+  <p>
+    <%= form.label :body %><br>
+    <%= form.textarea :body %>
+  </p>
+  <div class="border border-slate-300 p-1 w-[150px] text-center hover:bg-slate-300">
+    <%= form.submit %>
+  </div>
+<% end %>
