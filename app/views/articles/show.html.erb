@@ -1,4 +1,19 @@
 <div class="flex flex-col">
   <h1><%= @article.title %></h1>
   <p><%= @article.body %></p>
+  <br />
+  <div class="flex flex-row gap-1">
+    <div class="border border-slate-300 p-1 w-[100px] text-center hover:bg-slate-300">
+      <%= link_to "Edit", edit_article_path(@article) %>
+    </div>
+    <div class="border border-red-300 p-1 w-[100px] text-center hover:bg-red-300">
+      <%= link_to "Destroy", article_path(@article), data: {
+        turbo_method: :delete,
+        turbo_confirm: "Are you sure?"
+      } %>
+    </div>
+    <div class="border border-blue-300 p-1 w-[100px] text-center hover:bg-blue-300">
+      <%= link_to "Articles", articles_path %>
+    </div>
+  </div>
 </div>

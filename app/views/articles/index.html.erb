@@ -3,9 +3,13 @@
 
   <ul>
     <% @articles.each do |article| %>
-      <li>
+      <li class="mb-1">
         <%= link_to article.title, article %>
       </li>
     <% end %>
   </ul>
+
+  <div class="border border-slate-300 p-1 w-[150px] text-center hover:bg-slate-300">
+    <%= link_to "New Article", new_article_path %>
+  </div>
 </div>
